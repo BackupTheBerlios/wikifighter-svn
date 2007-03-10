@@ -20,7 +20,6 @@
     <File name="./gtk-gui/MainWindow.cs" subtype="Code" buildaction="Compile" />
     <File name="./Main.cs" subtype="Code" buildaction="Compile" />
     <File name="./AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
-    <File name="./DotNetWikiBot/DotNetWikiBot.cs" subtype="Code" buildaction="Compile" />
     <File name="./Wikifighter.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
