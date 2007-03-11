@@ -48,31 +48,31 @@ namespace Wikifighter {
         protected virtual void Build() {
             Stetic.Gui.Initialize();
             // Widget Wikifighter.OptionsDialog
-            this.CanFocus = false;
             this.Events = ((Gdk.EventMask)(256));
             this.Name = "Wikifighter.OptionsDialog";
             this.Title = Mono.Unix.Catalog.GetString("Options");
+            this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.AllowShrink = true;
+            this.HasSeparator = false;
             // Internal child Wikifighter.OptionsDialog.VBox
             Gtk.VBox w1 = this.VBox;
-            w1.CanFocus = false;
             w1.Events = ((Gdk.EventMask)(256));
             w1.Name = "dialog_VBox";
             w1.BorderWidth = ((uint)(2));
             // Container child dialog_VBox.Gtk.Box+BoxChild
             this.vbox3 = new Gtk.VBox();
-            this.vbox3.CanFocus = false;
             this.vbox3.Name = "vbox3";
             // Container child vbox3.Gtk.Box+BoxChild
             this.username_password_expander = new Gtk.Expander(null);
+            this.username_password_expander.CanFocus = true;
             this.username_password_expander.Name = "username_password_expander";
             this.username_password_expander.Expanded = true;
             // Container child username_password_expander.Gtk.Container+ContainerChild
             this.table1 = new Gtk.Table(((uint)(3)), ((uint)(2)), false);
-            this.table1.CanFocus = false;
             this.table1.Name = "table1";
             // Container child table1.Gtk.Table+TableChild
             this.password_entry_1 = new Gtk.Entry();
+            this.password_entry_1.CanFocus = true;
             this.password_entry_1.Name = "password_entry_1";
             this.password_entry_1.IsEditable = true;
             this.password_entry_1.Visibility = false;
@@ -85,6 +85,7 @@ namespace Wikifighter {
             w2.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
             this.password_entry_2 = new Gtk.Entry();
+            this.password_entry_2.CanFocus = true;
             this.password_entry_2.Name = "password_entry_2";
             this.password_entry_2.IsEditable = true;
             this.password_entry_2.Visibility = false;
@@ -97,7 +98,6 @@ namespace Wikifighter {
             w3.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
             this.password_label = new Gtk.Label();
-            this.password_label.CanFocus = false;
             this.password_label.Name = "password_label";
             this.password_label.LabelProp = Mono.Unix.Catalog.GetString("Passwort");
             this.table1.Add(this.password_label);
@@ -108,6 +108,7 @@ namespace Wikifighter {
             w4.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
             this.username_entry = new Gtk.Entry();
+            this.username_entry.CanFocus = true;
             this.username_entry.Name = "username_entry";
             this.username_entry.IsEditable = true;
             this.table1.Add(this.username_entry);
@@ -117,7 +118,6 @@ namespace Wikifighter {
             w5.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
             this.username_label = new Gtk.Label();
-            this.username_label.CanFocus = false;
             this.username_label.Name = "username_label";
             this.username_label.LabelProp = Mono.Unix.Catalog.GetString("Benutzername");
             this.table1.Add(this.username_label);
@@ -126,7 +126,6 @@ namespace Wikifighter {
             w6.YOptions = ((Gtk.AttachOptions)(4));
             this.username_password_expander.Add(this.table1);
             this.username_password_label = new Gtk.Label();
-            this.username_password_label.CanFocus = false;
             this.username_password_label.Name = "username_password_label";
             this.username_password_label.LabelProp = Mono.Unix.Catalog.GetString("Benutzername / Passwort");
             this.username_password_label.UseUnderline = true;
@@ -138,15 +137,14 @@ namespace Wikifighter {
             w8.Fill = false;
             // Container child vbox3.Gtk.Box+BoxChild
             this.rcconfig_expander = new Gtk.Expander(null);
+            this.rcconfig_expander.CanFocus = true;
             this.rcconfig_expander.Name = "rcconfig_expander";
             this.rcconfig_expander.Expanded = true;
             // Container child rcconfig_expander.Gtk.Container+ContainerChild
             this.table2 = new Gtk.Table(((uint)(2)), ((uint)(2)), false);
-            this.table2.CanFocus = false;
             this.table2.Name = "table2";
             this.rcconfig_expander.Add(this.table2);
             this.rcconfig_label = new Gtk.Label();
-            this.rcconfig_label.CanFocus = false;
             this.rcconfig_label.Name = "rcconfig_label";
             this.rcconfig_label.LabelProp = Mono.Unix.Catalog.GetString("Letzte Änderungen");
             this.rcconfig_label.UseUnderline = true;
@@ -159,7 +157,6 @@ namespace Wikifighter {
             w11.Position = 0;
             // Internal child Wikifighter.OptionsDialog.ActionArea
             Gtk.HButtonBox w12 = this.ActionArea;
-            w12.CanFocus = false;
             w12.Events = ((Gdk.EventMask)(256));
             w12.Name = "Wikifighter.Options_ActionArea";
             w12.Spacing = 10;
@@ -168,6 +165,7 @@ namespace Wikifighter {
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_help_button = new Gtk.Button();
             this.options_help_button.CanDefault = true;
+            this.options_help_button.CanFocus = true;
             this.options_help_button.Name = "options_help_button";
             this.options_help_button.UseStock = true;
             this.options_help_button.UseUnderline = true;
@@ -176,6 +174,7 @@ namespace Wikifighter {
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_cancel_button = new Gtk.Button();
             this.options_cancel_button.CanDefault = true;
+            this.options_cancel_button.CanFocus = true;
             this.options_cancel_button.Name = "options_cancel_button";
             this.options_cancel_button.UseStock = true;
             this.options_cancel_button.UseUnderline = true;
@@ -188,6 +187,7 @@ namespace Wikifighter {
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_apply_button = new Gtk.Button();
             this.options_apply_button.CanDefault = true;
+            this.options_apply_button.CanFocus = true;
             this.options_apply_button.Name = "options_apply_button";
             this.options_apply_button.UseStock = true;
             this.options_apply_button.UseUnderline = true;
@@ -200,6 +200,7 @@ namespace Wikifighter {
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_ok_button = new Gtk.Button();
             this.options_ok_button.CanDefault = true;
+            this.options_ok_button.CanFocus = true;
             this.options_ok_button.Name = "options_ok_button";
             this.options_ok_button.UseStock = true;
             this.options_ok_button.UseUnderline = true;

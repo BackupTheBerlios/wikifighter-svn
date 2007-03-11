@@ -24,7 +24,7 @@ public partial class MainWindow: Gtk.Window
 		//b.Show();
 		
 		Build ();
-		
+		//RC_Liste initialisieren
 		this.rc_view.AppendColumn("Editor", new CellRendererText (), "text", 0);
 		this.rc_view.AppendColumn("Artikel", new CellRendererText (), "text", 1);
 		this.rc_view.AppendColumn("Diff", new CellRendererText (), "text", 2);
@@ -35,21 +35,22 @@ public partial class MainWindow: Gtk.Window
                 store.AppendValues ("C-M","Allgemeine Relativitätstheorie",-1231,"revert Vandalismus");
                 }
                 this.rc_view.Model = store;
+		
+		//Browser initialisieren
         this.urlentry.InsertText(0,gecko.Location);
-		//this.urlentry.AppendText(gecko.Location);
-		//this.urlentry.ActiveText = gecko.Location;
-		//this.geckopage1.Add(gecko);
-		//geckoTab.AppendPage(gecko,new Label("Page: "+geckoTab.Children.Length));
-		//geckoTab.AppendPage(b,new Label("Page: "+geckoTab.Children.Length));
-		//geckoTab.Show();
-		//gecko.OpenUri.
 		this.geckobox.Add(gecko);
-		//this.textview1.Colormap.
+		this.history_treeview.AppendColumn("Verglich", new Gtk.CellRendererToggle(), "text", 0);
+		this.history_treeview.AppendColumn("", new Gtk.CellRendererToggle(), "text", 0);
+		this.history_treeview.AppendColumn("Revert", new Gtk.CellRendererToggle(), "text", 0);
+		this.history_treeview.AppendColumn("Datum/Uhrzeit", new CellRendererText (), "text", 0);
+		this.history_treeview.AppendColumn("Verglich", new CellRendererText (), "text", 0);
+		this.history_treeview.AppendColumn("Benutzer", new CellRendererText (), "text", 0);
+		this.history_treeview.AppendColumn("Kommentar", new CellRendererText (), "text", 0);
 		
+		ListStore history_store = new ListStore (typeof (Gtk.ToggleButton),typeof (Gtk.ToggleButton), typeof (Gtk.ToggleButton),typeof(string),typeof(string),typeof(string),typeof(string));
+
 		
-		
-		
-		
+		this.history_treeview.Model = history_store;
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
