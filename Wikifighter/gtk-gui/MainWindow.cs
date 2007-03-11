@@ -72,7 +72,7 @@ public partial class MainWindow {
     
     private Gtk.Button forward;
     
-    private Gtk.Entry urlentry;
+    private Gtk.ComboBoxEntry urlentry;
     
     private Gtk.Button go;
     
@@ -140,23 +140,43 @@ public partial class MainWindow {
     
     private Gtk.Label label2;
     
-    private Gtk.HBox hbox3;
+    private Gtk.Table table4;
     
-    private Gtk.Frame frame4;
+    private Gtk.ScrolledWindow diff_new_scrolled_window;
     
-    private Gtk.Alignment GtkAlignment4;
+    private Gtk.Frame diff_new_frame;
     
-    private Gtk.TreeView treeview5;
+    private Gtk.Alignment GtkAlignment11;
     
-    private Gtk.Label GtkLabel9;
+    private Gtk.TreeView diff_new_treeview;
     
-    private Gtk.Frame frame3;
+    private Gtk.Label diff_new_label;
     
-    private Gtk.Alignment GtkAlignment3;
+    private Gtk.ScrolledWindow diff_old_scrolled_window;
     
-    private Gtk.TreeView treeview4;
+    private Gtk.Frame diff_old_frame;
     
-    private Gtk.Label GtkLabel11;
+    private Gtk.Alignment GtkAlignment10;
+    
+    private Gtk.TreeView diff_old_treeview;
+    
+    private Gtk.Label diff_old_label;
+    
+    private Gtk.HButtonBox hbuttonbox2;
+    
+    private Gtk.Button diff_old_back_button1;
+    
+    private Gtk.Button button47;
+    
+    private Gtk.Button diff_new_next_button;
+    
+    private Gtk.HButtonBox hbuttonbox3;
+    
+    private Gtk.Button diff_old_back_button;
+    
+    private Gtk.Button diff_old_revert_button;
+    
+    private Gtk.Button diff_old_next_button;
     
     private Gtk.Label label3;
     
@@ -300,9 +320,9 @@ public partial class MainWindow {
         w6.Expand = false;
         w6.Fill = false;
         // Container child navigationbox.Gtk.Box+BoxChild
-        this.urlentry = new Gtk.Entry();
+        this.urlentry = Gtk.ComboBoxEntry.NewText();
+        this.urlentry.CanFocus = false;
         this.urlentry.Name = "urlentry";
-        this.urlentry.IsEditable = true;
         this.navigationbox.Add(this.urlentry);
         Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.navigationbox[this.urlentry]));
         w7.Position = 2;
@@ -317,15 +337,15 @@ public partial class MainWindow {
         // Container child GtkAlignment2.Gtk.Container+ContainerChild
         Gtk.HBox w9 = new Gtk.HBox();
         w9.CanFocus = false;
-        w9.Name = "GtkHBox2";
+        w9.Name = "GtkHBox3";
         w9.Spacing = 2;
-        // Container child GtkHBox2.Gtk.Container+ContainerChild
+        // Container child GtkHBox3.Gtk.Container+ContainerChild
         Gtk.Image w10 = new Gtk.Image();
         w10.CanFocus = false;
-        w10.Name = "image11";
+        w10.Name = "image60";
         w10.Pixbuf = Gtk.IconTheme.Default.LoadIcon("gtk-apply", 16, 0);
         w9.Add(w10);
-        // Container child GtkHBox2.Gtk.Container+ContainerChild
+        // Container child GtkHBox3.Gtk.Container+ContainerChild
         Gtk.Label w12 = new Gtk.Label();
         w12.CanFocus = false;
         w12.Name = "GtkLabel3";
@@ -563,100 +583,233 @@ public partial class MainWindow {
         this.label2.LabelProp = Mono.Unix.Catalog.GetString("History");
         this.notebook2.SetTabLabel(this.treeview1, this.label2);
         // Container child notebook2.Gtk.Notebook+NotebookChild
-        this.hbox3 = new Gtk.HBox();
-        this.hbox3.CanFocus = false;
-        this.hbox3.Name = "hbox3";
-        // Container child hbox3.Gtk.Box+BoxChild
-        this.frame4 = new Gtk.Frame();
-        this.frame4.CanFocus = false;
-        this.frame4.Name = "frame4";
-        this.frame4.ShadowType = ((Gtk.ShadowType)(0));
-        this.frame4.LabelXalign = 0F;
-        // Container child frame4.Gtk.Container+ContainerChild
-        this.GtkAlignment4 = new Gtk.Alignment(0F, 0F, 1F, 1F);
-        this.GtkAlignment4.CanFocus = false;
-        this.GtkAlignment4.Name = "GtkAlignment4";
-        this.GtkAlignment4.LeftPadding = ((uint)(12));
-        // Container child GtkAlignment4.Gtk.Container+ContainerChild
-        this.treeview5 = new Gtk.TreeView();
-        this.treeview5.Name = "treeview5";
-        this.GtkAlignment4.Add(this.treeview5);
-        this.frame4.Add(this.GtkAlignment4);
-        this.GtkLabel9 = new Gtk.Label();
-        this.GtkLabel9.CanFocus = false;
-        this.GtkLabel9.Events = ((Gdk.EventMask)(256));
-        this.GtkLabel9.Name = "GtkLabel9";
-        this.GtkLabel9.LabelProp = Mono.Unix.Catalog.GetString("<b>frame4</b>");
-        this.GtkLabel9.UseMarkup = true;
-        this.frame4.LabelWidget = this.GtkLabel9;
-        this.hbox3.Add(this.frame4);
-        Gtk.Box.BoxChild w45 = ((Gtk.Box.BoxChild)(this.hbox3[this.frame4]));
-        w45.Position = 0;
-        w45.Fill = false;
-        // Container child hbox3.Gtk.Box+BoxChild
-        this.frame3 = new Gtk.Frame();
-        this.frame3.CanFocus = false;
-        this.frame3.Name = "frame3";
-        this.frame3.ShadowType = ((Gtk.ShadowType)(0));
-        this.frame3.LabelXalign = 0F;
-        // Container child frame3.Gtk.Container+ContainerChild
-        this.GtkAlignment3 = new Gtk.Alignment(0F, 0F, 1F, 1F);
-        this.GtkAlignment3.CanFocus = false;
-        this.GtkAlignment3.Name = "GtkAlignment3";
-        this.GtkAlignment3.LeftPadding = ((uint)(12));
-        // Container child GtkAlignment3.Gtk.Container+ContainerChild
-        this.treeview4 = new Gtk.TreeView();
-        this.treeview4.Name = "treeview4";
-        this.GtkAlignment3.Add(this.treeview4);
-        this.frame3.Add(this.GtkAlignment3);
-        this.GtkLabel11 = new Gtk.Label();
-        this.GtkLabel11.CanFocus = false;
-        this.GtkLabel11.Events = ((Gdk.EventMask)(256));
-        this.GtkLabel11.Name = "GtkLabel11";
-        this.GtkLabel11.LabelProp = Mono.Unix.Catalog.GetString("<b>frame3</b>");
-        this.GtkLabel11.UseMarkup = true;
-        this.frame3.LabelWidget = this.GtkLabel11;
-        this.hbox3.Add(this.frame3);
-        Gtk.Box.BoxChild w48 = ((Gtk.Box.BoxChild)(this.hbox3[this.frame3]));
-        w48.Position = 1;
-        w48.Expand = false;
-        w48.Fill = false;
-        this.notebook2.Add(this.hbox3);
-        Gtk.Notebook.NotebookChild w49 = ((Gtk.Notebook.NotebookChild)(this.notebook2[this.hbox3]));
-        w49.Position = 4;
-        w49.TabExpand = false;
+        this.table4 = new Gtk.Table(((uint)(3)), ((uint)(2)), false);
+        this.table4.CanFocus = false;
+        this.table4.Name = "table4";
+        // Container child table4.Gtk.Table+TableChild
+        this.diff_new_scrolled_window = new Gtk.ScrolledWindow();
+        this.diff_new_scrolled_window.Name = "diff_new_scrolled_window";
+        this.diff_new_scrolled_window.VscrollbarPolicy = ((Gtk.PolicyType)(1));
+        this.diff_new_scrolled_window.HscrollbarPolicy = ((Gtk.PolicyType)(1));
+        // Container child diff_new_scrolled_window.Gtk.Container+ContainerChild
+        Gtk.Viewport w43 = new Gtk.Viewport();
+        w43.CanFocus = false;
+        w43.Name = "GtkViewport1";
+        w43.ShadowType = ((Gtk.ShadowType)(0));
+        // Container child GtkViewport1.Gtk.Container+ContainerChild
+        this.diff_new_frame = new Gtk.Frame();
+        this.diff_new_frame.CanFocus = false;
+        this.diff_new_frame.Name = "diff_new_frame";
+        this.diff_new_frame.ShadowType = ((Gtk.ShadowType)(0));
+        this.diff_new_frame.LabelXalign = 0F;
+        // Container child diff_new_frame.Gtk.Container+ContainerChild
+        this.GtkAlignment11 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+        this.GtkAlignment11.CanFocus = false;
+        this.GtkAlignment11.Name = "GtkAlignment11";
+        this.GtkAlignment11.LeftPadding = ((uint)(12));
+        // Container child GtkAlignment11.Gtk.Container+ContainerChild
+        this.diff_new_treeview = new Gtk.TreeView();
+        this.diff_new_treeview.Name = "diff_new_treeview";
+        this.GtkAlignment11.Add(this.diff_new_treeview);
+        this.diff_new_frame.Add(this.GtkAlignment11);
+        this.diff_new_label = new Gtk.Label();
+        this.diff_new_label.CanFocus = false;
+        this.diff_new_label.Events = ((Gdk.EventMask)(256));
+        this.diff_new_label.Name = "diff_new_label";
+        this.diff_new_label.LabelProp = Mono.Unix.Catalog.GetString("<b>neue Verion von</b>");
+        this.diff_new_label.UseMarkup = true;
+        this.diff_new_frame.LabelWidget = this.diff_new_label;
+        w43.Add(this.diff_new_frame);
+        this.diff_new_scrolled_window.Add(w43);
+        this.table4.Add(this.diff_new_scrolled_window);
+        Gtk.Table.TableChild w48 = ((Gtk.Table.TableChild)(this.table4[this.diff_new_scrolled_window]));
+        w48.TopAttach = ((uint)(1));
+        w48.BottomAttach = ((uint)(2));
+        w48.LeftAttach = ((uint)(1));
+        w48.RightAttach = ((uint)(2));
+        // Container child table4.Gtk.Table+TableChild
+        this.diff_old_scrolled_window = new Gtk.ScrolledWindow();
+        this.diff_old_scrolled_window.Name = "diff_old_scrolled_window";
+        this.diff_old_scrolled_window.VscrollbarPolicy = ((Gtk.PolicyType)(1));
+        this.diff_old_scrolled_window.HscrollbarPolicy = ((Gtk.PolicyType)(1));
+        // Container child diff_old_scrolled_window.Gtk.Container+ContainerChild
+        Gtk.Viewport w49 = new Gtk.Viewport();
+        w49.CanFocus = false;
+        w49.Name = "GtkViewport2";
+        w49.ShadowType = ((Gtk.ShadowType)(0));
+        // Container child GtkViewport2.Gtk.Container+ContainerChild
+        this.diff_old_frame = new Gtk.Frame();
+        this.diff_old_frame.CanFocus = false;
+        this.diff_old_frame.Name = "diff_old_frame";
+        this.diff_old_frame.ShadowType = ((Gtk.ShadowType)(0));
+        this.diff_old_frame.LabelXalign = 0F;
+        // Container child diff_old_frame.Gtk.Container+ContainerChild
+        this.GtkAlignment10 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+        this.GtkAlignment10.CanFocus = false;
+        this.GtkAlignment10.Name = "GtkAlignment10";
+        this.GtkAlignment10.LeftPadding = ((uint)(12));
+        // Container child GtkAlignment10.Gtk.Container+ContainerChild
+        this.diff_old_treeview = new Gtk.TreeView();
+        this.diff_old_treeview.Name = "diff_old_treeview";
+        this.GtkAlignment10.Add(this.diff_old_treeview);
+        this.diff_old_frame.Add(this.GtkAlignment10);
+        this.diff_old_label = new Gtk.Label();
+        this.diff_old_label.CanFocus = false;
+        this.diff_old_label.Events = ((Gdk.EventMask)(256));
+        this.diff_old_label.Name = "diff_old_label";
+        this.diff_old_label.LabelProp = Mono.Unix.Catalog.GetString("<b>Alte Version von</b>");
+        this.diff_old_label.UseMarkup = true;
+        this.diff_old_frame.LabelWidget = this.diff_old_label;
+        w49.Add(this.diff_old_frame);
+        this.diff_old_scrolled_window.Add(w49);
+        this.table4.Add(this.diff_old_scrolled_window);
+        Gtk.Table.TableChild w54 = ((Gtk.Table.TableChild)(this.table4[this.diff_old_scrolled_window]));
+        w54.TopAttach = ((uint)(1));
+        w54.BottomAttach = ((uint)(2));
+        // Container child table4.Gtk.Table+TableChild
+        this.hbuttonbox2 = new Gtk.HButtonBox();
+        this.hbuttonbox2.CanFocus = false;
+        this.hbuttonbox2.Name = "hbuttonbox2";
+        // Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
+        this.diff_old_back_button1 = new Gtk.Button();
+        this.diff_old_back_button1.WidthRequest = 80;
+        this.diff_old_back_button1.Name = "diff_old_back_button1";
+        this.diff_old_back_button1.UseStock = true;
+        this.diff_old_back_button1.UseUnderline = true;
+        this.diff_old_back_button1.Label = "gtk-go-back";
+        this.hbuttonbox2.Add(this.diff_old_back_button1);
+        Gtk.ButtonBox.ButtonBoxChild w55 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.diff_old_back_button1]));
+        w55.Expand = false;
+        w55.Fill = false;
+        // Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
+        this.button47 = new Gtk.Button();
+        this.button47.WidthRequest = 100;
+        this.button47.Name = "button47";
+        this.button47.UseUnderline = true;
+        // Container child button47.Gtk.Container+ContainerChild
+        Gtk.Alignment w56 = new Gtk.Alignment(0.5F, 0.5F, 0F, 0F);
+        w56.CanFocus = false;
+        w56.Name = "GtkAlignment8";
+        // Container child GtkAlignment8.Gtk.Container+ContainerChild
+        Gtk.HBox w57 = new Gtk.HBox();
+        w57.CanFocus = false;
+        w57.Name = "GtkHBox8";
+        w57.Spacing = 2;
+        // Container child GtkHBox8.Gtk.Container+ContainerChild
+        Gtk.Image w58 = new Gtk.Image();
+        w58.CanFocus = false;
+        w58.Name = "image61";
+        w58.Pixbuf = Gtk.IconTheme.Default.LoadIcon("gtk-clear", 16, 0);
+        w57.Add(w58);
+        // Container child GtkHBox8.Gtk.Container+ContainerChild
+        Gtk.Label w60 = new Gtk.Label();
+        w60.CanFocus = false;
+        w60.Name = "GtkLabel9";
+        w60.LabelProp = Mono.Unix.Catalog.GetString("_Entfernen");
+        w60.UseUnderline = true;
+        w57.Add(w60);
+        w56.Add(w57);
+        this.button47.Add(w56);
+        this.hbuttonbox2.Add(this.button47);
+        Gtk.ButtonBox.ButtonBoxChild w64 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button47]));
+        w64.Position = 1;
+        w64.Expand = false;
+        w64.Fill = false;
+        // Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
+        this.diff_new_next_button = new Gtk.Button();
+        this.diff_new_next_button.WidthRequest = 80;
+        this.diff_new_next_button.Name = "diff_new_next_button";
+        this.diff_new_next_button.UseStock = true;
+        this.diff_new_next_button.UseUnderline = true;
+        this.diff_new_next_button.Label = "gtk-go-forward";
+        this.hbuttonbox2.Add(this.diff_new_next_button);
+        Gtk.ButtonBox.ButtonBoxChild w65 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.diff_new_next_button]));
+        w65.Position = 2;
+        w65.Expand = false;
+        w65.Fill = false;
+        this.table4.Add(this.hbuttonbox2);
+        Gtk.Table.TableChild w66 = ((Gtk.Table.TableChild)(this.table4[this.hbuttonbox2]));
+        w66.LeftAttach = ((uint)(1));
+        w66.RightAttach = ((uint)(2));
+        w66.YOptions = ((Gtk.AttachOptions)(4));
+        // Container child table4.Gtk.Table+TableChild
+        this.hbuttonbox3 = new Gtk.HButtonBox();
+        this.hbuttonbox3.CanFocus = false;
+        this.hbuttonbox3.Name = "hbuttonbox3";
+        // Container child hbuttonbox3.Gtk.ButtonBox+ButtonBoxChild
+        this.diff_old_back_button = new Gtk.Button();
+        this.diff_old_back_button.WidthRequest = 80;
+        this.diff_old_back_button.Name = "diff_old_back_button";
+        this.diff_old_back_button.UseStock = true;
+        this.diff_old_back_button.UseUnderline = true;
+        this.diff_old_back_button.Label = "gtk-go-back";
+        this.hbuttonbox3.Add(this.diff_old_back_button);
+        Gtk.ButtonBox.ButtonBoxChild w67 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3[this.diff_old_back_button]));
+        w67.Expand = false;
+        w67.Fill = false;
+        // Container child hbuttonbox3.Gtk.ButtonBox+ButtonBoxChild
+        this.diff_old_revert_button = new Gtk.Button();
+        this.diff_old_revert_button.WidthRequest = 100;
+        this.diff_old_revert_button.Name = "diff_old_revert_button";
+        this.diff_old_revert_button.UseStock = true;
+        this.diff_old_revert_button.UseUnderline = true;
+        this.diff_old_revert_button.Label = "gtk-undo";
+        this.hbuttonbox3.Add(this.diff_old_revert_button);
+        Gtk.ButtonBox.ButtonBoxChild w68 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3[this.diff_old_revert_button]));
+        w68.Position = 1;
+        w68.Expand = false;
+        w68.Fill = false;
+        // Container child hbuttonbox3.Gtk.ButtonBox+ButtonBoxChild
+        this.diff_old_next_button = new Gtk.Button();
+        this.diff_old_next_button.WidthRequest = 80;
+        this.diff_old_next_button.Name = "diff_old_next_button";
+        this.diff_old_next_button.UseStock = true;
+        this.diff_old_next_button.UseUnderline = true;
+        this.diff_old_next_button.Label = "gtk-go-forward";
+        this.hbuttonbox3.Add(this.diff_old_next_button);
+        Gtk.ButtonBox.ButtonBoxChild w69 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3[this.diff_old_next_button]));
+        w69.Position = 2;
+        w69.Expand = false;
+        w69.Fill = false;
+        this.table4.Add(this.hbuttonbox3);
+        Gtk.Table.TableChild w70 = ((Gtk.Table.TableChild)(this.table4[this.hbuttonbox3]));
+        w70.YOptions = ((Gtk.AttachOptions)(4));
+        this.notebook2.Add(this.table4);
+        Gtk.Notebook.NotebookChild w71 = ((Gtk.Notebook.NotebookChild)(this.notebook2[this.table4]));
+        w71.Position = 4;
+        w71.TabExpand = false;
         // Notebook tab
         this.label3 = new Gtk.Label();
         this.label3.CanFocus = false;
         this.label3.Name = "label3";
         this.label3.LabelProp = Mono.Unix.Catalog.GetString("Diff");
-        this.notebook2.SetTabLabel(this.hbox3, this.label3);
+        this.notebook2.SetTabLabel(this.table4, this.label3);
         // Notebook tab
-        Gtk.Label w50 = new Gtk.Label();
-        w50.Visible = true;
-        this.notebook2.Add(w50);
+        Gtk.Label w72 = new Gtk.Label();
+        w72.Visible = true;
+        this.notebook2.Add(w72);
         this.label4 = new Gtk.Label();
         this.label4.CanFocus = false;
         this.label4.Name = "label4";
         this.label4.LabelProp = Mono.Unix.Catalog.GetString("Benutzer");
-        this.notebook2.SetTabLabel(w50, this.label4);
+        this.notebook2.SetTabLabel(w72, this.label4);
         this.browserbox.Add(this.notebook2);
-        Gtk.Box.BoxChild w51 = ((Gtk.Box.BoxChild)(this.browserbox[this.notebook2]));
-        w51.Position = 2;
+        Gtk.Box.BoxChild w73 = ((Gtk.Box.BoxChild)(this.browserbox[this.notebook2]));
+        w73.Position = 2;
         this.main_vbox.Add(this.browserbox);
-        Gtk.Box.BoxChild w52 = ((Gtk.Box.BoxChild)(this.main_vbox[this.browserbox]));
-        w52.Position = 1;
+        Gtk.Box.BoxChild w74 = ((Gtk.Box.BoxChild)(this.main_vbox[this.browserbox]));
+        w74.Position = 1;
         // Container child main_vbox.Gtk.Box+BoxChild
         this.statusbar1 = new Gtk.Statusbar();
         this.statusbar1.CanFocus = false;
         this.statusbar1.Name = "statusbar1";
         this.statusbar1.Spacing = 2;
         this.main_vbox.Add(this.statusbar1);
-        Gtk.Box.BoxChild w53 = ((Gtk.Box.BoxChild)(this.main_vbox[this.statusbar1]));
-        w53.PackType = ((Gtk.PackType)(1));
-        w53.Position = 2;
-        w53.Expand = false;
-        w53.Fill = false;
+        Gtk.Box.BoxChild w75 = ((Gtk.Box.BoxChild)(this.main_vbox[this.statusbar1]));
+        w75.PackType = ((Gtk.PackType)(1));
+        w75.Position = 2;
+        w75.Expand = false;
+        w75.Fill = false;
         this.Add(this.main_vbox);
         if ((this.Child != null)) {
             this.Child.ShowAll();
@@ -667,7 +820,6 @@ public partial class MainWindow {
         this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
         this.Beenden.Activated += new System.EventHandler(this.onBeenden);
         this.Einstellungen.Activated += new System.EventHandler(this.OnEinstellungenActivated);
-        this.urlentry.EditingDone += new System.EventHandler(this.OnEditingDone);
         this.urlentry.KeyReleaseEvent += new Gtk.KeyReleaseEventHandler(this.OnUrlentryKeyReleaseEvent);
         this.go.Clicked += new System.EventHandler(this.OnGoClicked);
     }

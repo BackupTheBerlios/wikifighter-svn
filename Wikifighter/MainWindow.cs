@@ -35,7 +35,9 @@ public partial class MainWindow: Gtk.Window
                 store.AppendValues ("C-M","Allgemeine Relativitätstheorie",-1231,"revert Vandalismus");
                 }
                 this.rc_view.Model = store;
-		this.urlentry.Text = gecko.Location;
+        this.urlentry.InsertText(0,gecko.Location);
+		//this.urlentry.AppendText(gecko.Location);
+		//this.urlentry.ActiveText = gecko.Location;
 		//this.geckopage1.Add(gecko);
 		//geckoTab.AppendPage(gecko,new Label("Page: "+geckoTab.Children.Length));
 		//geckoTab.AppendPage(b,new Label("Page: "+geckoTab.Children.Length));
@@ -63,7 +65,8 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnGoClicked(object sender, System.EventArgs e)
 	{
-	gecko.LoadUrl(this.urlentry.Text);
+	
+	gecko.LoadUrl(this.urlentry.ActiveText);
 	
 	}
 
@@ -75,7 +78,7 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnEditingDone(object sender, System.EventArgs e)
 	{
-	gecko.LoadUrl(this.urlentry.Text);
+	gecko.LoadUrl(this.urlentry.ActiveText);
 	}
 
 
@@ -89,7 +92,11 @@ public partial class MainWindow: Gtk.Window
 	protected void OnOpenUri(object o, OpenUriArgs args )
 	{
 	//return false;
-		this.urlentry.Text=args.AURI;
+		
+		//this.urlentry.AppendText(args.AURI);
+		this.urlentry.InsertText(0,args.AURI);
+		//this.urlentry.Active(0);
+		//this.urlentry.ActiveText=args.AURI;
 		Console.WriteLine(args.AURI);
 	return;
 	}
@@ -97,7 +104,7 @@ public partial class MainWindow: Gtk.Window
 	protected virtual void OnUrlentryKeyReleaseEvent(object o, Gtk.KeyReleaseEventArgs args)
 	{
 	Console.WriteLine(args.Event.Key.ToString());
-	if (args.Event.Key.ToString()=="Return") gecko.LoadUrl(this.urlentry.Text);
+	if (args.Event.Key.ToString()=="Return") gecko.LoadUrl(this.urlentry.ActiveText);
 	}
 
 	protected virtual void OnEinstellungenActivated(object sender, System.EventArgs e)

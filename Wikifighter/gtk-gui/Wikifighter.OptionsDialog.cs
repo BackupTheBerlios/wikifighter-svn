@@ -15,7 +15,7 @@ namespace Wikifighter {
         
         private Gtk.VBox vbox3;
         
-        private Gtk.Expander expander1;
+        private Gtk.Expander username_password_expander;
         
         private Gtk.Table table1;
         
@@ -30,6 +30,12 @@ namespace Wikifighter {
         private Gtk.Label username_label;
         
         private Gtk.Label username_password_label;
+        
+        private Gtk.Expander rcconfig_expander;
+        
+        private Gtk.Table table2;
+        
+        private Gtk.Label rcconfig_label;
         
         private Gtk.Button options_help_button;
         
@@ -58,10 +64,10 @@ namespace Wikifighter {
             this.vbox3.CanFocus = false;
             this.vbox3.Name = "vbox3";
             // Container child vbox3.Gtk.Box+BoxChild
-            this.expander1 = new Gtk.Expander(null);
-            this.expander1.Name = "expander1";
-            this.expander1.Expanded = true;
-            // Container child expander1.Gtk.Container+ContainerChild
+            this.username_password_expander = new Gtk.Expander(null);
+            this.username_password_expander.Name = "username_password_expander";
+            this.username_password_expander.Expanded = true;
+            // Container child username_password_expander.Gtk.Container+ContainerChild
             this.table1 = new Gtk.Table(((uint)(3)), ((uint)(2)), false);
             this.table1.CanFocus = false;
             this.table1.Name = "table1";
@@ -118,29 +124,47 @@ namespace Wikifighter {
             Gtk.Table.TableChild w6 = ((Gtk.Table.TableChild)(this.table1[this.username_label]));
             w6.XOptions = ((Gtk.AttachOptions)(4));
             w6.YOptions = ((Gtk.AttachOptions)(4));
-            this.expander1.Add(this.table1);
+            this.username_password_expander.Add(this.table1);
             this.username_password_label = new Gtk.Label();
             this.username_password_label.CanFocus = false;
             this.username_password_label.Name = "username_password_label";
             this.username_password_label.LabelProp = Mono.Unix.Catalog.GetString("Benutzername / Passwort");
             this.username_password_label.UseUnderline = true;
-            this.expander1.LabelWidget = this.username_password_label;
-            this.vbox3.Add(this.expander1);
-            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox3[this.expander1]));
+            this.username_password_expander.LabelWidget = this.username_password_label;
+            this.vbox3.Add(this.username_password_expander);
+            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox3[this.username_password_expander]));
             w8.Position = 1;
             w8.Expand = false;
             w8.Fill = false;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.rcconfig_expander = new Gtk.Expander(null);
+            this.rcconfig_expander.Name = "rcconfig_expander";
+            this.rcconfig_expander.Expanded = true;
+            // Container child rcconfig_expander.Gtk.Container+ContainerChild
+            this.table2 = new Gtk.Table(((uint)(2)), ((uint)(2)), false);
+            this.table2.CanFocus = false;
+            this.table2.Name = "table2";
+            this.rcconfig_expander.Add(this.table2);
+            this.rcconfig_label = new Gtk.Label();
+            this.rcconfig_label.CanFocus = false;
+            this.rcconfig_label.Name = "rcconfig_label";
+            this.rcconfig_label.LabelProp = Mono.Unix.Catalog.GetString("Letzte Änderungen");
+            this.rcconfig_label.UseUnderline = true;
+            this.rcconfig_expander.LabelWidget = this.rcconfig_label;
+            this.vbox3.Add(this.rcconfig_expander);
+            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox3[this.rcconfig_expander]));
+            w10.Position = 2;
             w1.Add(this.vbox3);
-            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(w1[this.vbox3]));
-            w9.Position = 0;
+            Gtk.Box.BoxChild w11 = ((Gtk.Box.BoxChild)(w1[this.vbox3]));
+            w11.Position = 0;
             // Internal child Wikifighter.OptionsDialog.ActionArea
-            Gtk.HButtonBox w10 = this.ActionArea;
-            w10.CanFocus = false;
-            w10.Events = ((Gdk.EventMask)(256));
-            w10.Name = "Wikifighter.Options_ActionArea";
-            w10.Spacing = 10;
-            w10.BorderWidth = ((uint)(5));
-            w10.LayoutStyle = ((Gtk.ButtonBoxStyle)(4));
+            Gtk.HButtonBox w12 = this.ActionArea;
+            w12.CanFocus = false;
+            w12.Events = ((Gdk.EventMask)(256));
+            w12.Name = "Wikifighter.Options_ActionArea";
+            w12.Spacing = 10;
+            w12.BorderWidth = ((uint)(5));
+            w12.LayoutStyle = ((Gtk.ButtonBoxStyle)(4));
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_help_button = new Gtk.Button();
             this.options_help_button.CanDefault = true;
@@ -157,10 +181,10 @@ namespace Wikifighter {
             this.options_cancel_button.UseUnderline = true;
             this.options_cancel_button.Label = "gtk-cancel";
             this.AddActionWidget(this.options_cancel_button, -6);
-            Gtk.ButtonBox.ButtonBoxChild w12 = ((Gtk.ButtonBox.ButtonBoxChild)(w10[this.options_cancel_button]));
-            w12.Position = 1;
-            w12.Expand = false;
-            w12.Fill = false;
+            Gtk.ButtonBox.ButtonBoxChild w14 = ((Gtk.ButtonBox.ButtonBoxChild)(w12[this.options_cancel_button]));
+            w14.Position = 1;
+            w14.Expand = false;
+            w14.Fill = false;
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_apply_button = new Gtk.Button();
             this.options_apply_button.CanDefault = true;
@@ -169,10 +193,10 @@ namespace Wikifighter {
             this.options_apply_button.UseUnderline = true;
             this.options_apply_button.Label = "gtk-apply";
             this.AddActionWidget(this.options_apply_button, -10);
-            Gtk.ButtonBox.ButtonBoxChild w13 = ((Gtk.ButtonBox.ButtonBoxChild)(w10[this.options_apply_button]));
-            w13.Position = 2;
-            w13.Expand = false;
-            w13.Fill = false;
+            Gtk.ButtonBox.ButtonBoxChild w15 = ((Gtk.ButtonBox.ButtonBoxChild)(w12[this.options_apply_button]));
+            w15.Position = 2;
+            w15.Expand = false;
+            w15.Fill = false;
             // Container child Wikifighter.Options_ActionArea.Gtk.ButtonBox+ButtonBoxChild
             this.options_ok_button = new Gtk.Button();
             this.options_ok_button.CanDefault = true;
@@ -181,10 +205,10 @@ namespace Wikifighter {
             this.options_ok_button.UseUnderline = true;
             this.options_ok_button.Label = "gtk-ok";
             this.AddActionWidget(this.options_ok_button, -5);
-            Gtk.ButtonBox.ButtonBoxChild w14 = ((Gtk.ButtonBox.ButtonBoxChild)(w10[this.options_ok_button]));
-            w14.Position = 3;
-            w14.Expand = false;
-            w14.Fill = false;
+            Gtk.ButtonBox.ButtonBoxChild w16 = ((Gtk.ButtonBox.ButtonBoxChild)(w12[this.options_ok_button]));
+            w16.Position = 3;
+            w16.Expand = false;
+            w16.Fill = false;
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
