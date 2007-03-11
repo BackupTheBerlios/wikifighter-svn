@@ -2,6 +2,7 @@ using System;
 using Gtk;
 using Gecko;
 using Cairo;
+using Wikifighter;
 public partial class MainWindow: Gtk.Window
 {	
 	private WebControl gecko;
@@ -41,7 +42,10 @@ public partial class MainWindow: Gtk.Window
 		//geckoTab.Show();
 		//gecko.OpenUri.
 		this.geckobox.Add(gecko);
-		this.textview1.Colormap.
+		//this.textview1.Colormap.
+		
+		
+		
 		
 		
 	}
@@ -94,5 +98,10 @@ public partial class MainWindow: Gtk.Window
 	{
 	Console.WriteLine(args.Event.Key.ToString());
 	if (args.Event.Key.ToString()=="Return") gecko.LoadUrl(this.urlentry.Text);
+	}
+
+	protected virtual void OnEinstellungenActivated(object sender, System.EventArgs e)
+	{
+		OptionsDialog opt = new OptionsDialog();
 	}
 }

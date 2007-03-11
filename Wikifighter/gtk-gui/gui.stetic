@@ -116,21 +116,37 @@
         <property name="ShortLabel" translatable="yes">_Aktualisieren</property>
         <property name="StockId">gtk-refresh</property>
       </action>
+      <action id="Bearbeiten">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Bearbeiten</property>
+        <property name="ShortLabel" translatable="yes">_Bearbeiten</property>
+      </action>
+      <action id="Einstellungen">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Einstellungen</property>
+        <property name="ShortLabel" translatable="yes">_Einstellungen</property>
+        <signal name="Activated" handler="OnEinstellungenActivated" />
+      </action>
     </action-group>
     <property name="MemberName" />
+    <property name="CanFocus">False</property>
     <property name="Title" translatable="yes">Wikifighter</property>
     <property name="Icon">stock:stock_smiley-18 Menu</property>
-    <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
       <widget class="Gtk.VBox" id="main_vbox">
         <property name="MemberName" />
+        <property name="CanFocus">False</property>
         <child>
           <widget class="Gtk.MenuBar" id="menubar">
             <property name="MemberName" />
+            <property name="CanFocus">False</property>
             <node name="menubar" type="Menubar">
               <node type="Menu" action="Datei">
                 <node type="Menuitem" action="Beenden" />
+              </node>
+              <node type="Menu" action="Bearbeiten">
+                <node type="Menuitem" action="Einstellungen" />
               </node>
               <node type="Menu" action="Aktionen">
                 <node type="Menuitem" action="LA1" />
@@ -152,13 +168,15 @@
         <child>
           <widget class="Gtk.VBox" id="browserbox">
             <property name="MemberName" />
+            <property name="CanFocus">False</property>
             <child>
               <widget class="Gtk.Toolbar" id="geckotoolbar">
                 <property name="MemberName" />
+                <property name="CanFocus">False</property>
                 <property name="ShowArrow">False</property>
                 <property name="ButtonStyle">Icons</property>
                 <property name="IconSize">LargeToolbar</property>
-                <node name="geckotoolbar" type="Menubar">
+                <node name="geckotoolbar" type="Toolbar">
                   <node type="Toolitem" action="Revert" />
                   <node type="Toolitem" action="SLA" />
                   <node type="Toolitem" action="Beobachten" />
@@ -179,12 +197,12 @@
             <child>
               <widget class="Gtk.HBox" id="navigationbox">
                 <property name="MemberName" />
+                <property name="CanFocus">False</property>
                 <property name="Spacing">3</property>
                 <property name="BorderWidth">1</property>
                 <child>
                   <widget class="Gtk.Button" id="back">
                     <property name="MemberName" />
-                    <property name="CanFocus">True</property>
                     <property name="UseStock">True</property>
                     <property name="Type">StockItem</property>
                     <property name="StockId">gtk-go-back</property>
@@ -201,7 +219,6 @@
                 <child>
                   <widget class="Gtk.Button" id="forward">
                     <property name="MemberName" />
-                    <property name="CanFocus">True</property>
                     <property name="UseStock">True</property>
                     <property name="Type">StockItem</property>
                     <property name="StockId">gtk-go-forward</property>
@@ -218,7 +235,6 @@
                 <child>
                   <widget class="Gtk.Entry" id="urlentry">
                     <property name="MemberName" />
-                    <property name="CanFocus">True</property>
                     <property name="IsEditable">True</property>
                     <signal name="EditingDone" handler="OnEditingDone" />
                     <signal name="KeyReleaseEvent" handler="OnUrlentryKeyReleaseEvent" />
@@ -231,7 +247,6 @@
                 <child>
                   <widget class="Gtk.Button" id="go">
                     <property name="MemberName" />
-                    <property name="CanFocus">True</property>
                     <property name="Type">TextAndIcon</property>
                     <property name="Icon">stock:gtk-apply Menu</property>
                     <property name="Label" translatable="yes">_Go!</property>
@@ -257,44 +272,45 @@
             <child>
               <widget class="Gtk.Notebook" id="notebook2">
                 <property name="MemberName" />
-                <property name="CanFocus">True</property>
                 <child>
                   <widget class="Gtk.ScrolledWindow" id="scrolledwindow2">
                     <property name="MemberName" />
-                    <property name="CanFocus">True</property>
                     <property name="VscrollbarPolicy">Automatic</property>
                     <property name="HscrollbarPolicy">Automatic</property>
                     <child>
                       <widget class="Gtk.Viewport" id="GtkViewport">
                         <property name="MemberName" />
+                        <property name="CanFocus">False</property>
                         <property name="ShadowType">None</property>
                         <child>
                           <widget class="Gtk.VPaned" id="vpaned1">
                             <property name="MemberName" />
-                            <property name="CanFocus">True</property>
                             <property name="Position">119</property>
                             <child>
                               <widget class="Gtk.HBox" id="hbox5">
                                 <property name="MemberName" />
+                                <property name="CanFocus">False</property>
                                 <child>
                                   <widget class="Gtk.HPaned" id="hpaned1">
                                     <property name="MemberName" />
-                                    <property name="CanFocus">True</property>
                                     <property name="Position">287</property>
                                     <child>
                                       <widget class="Gtk.Frame" id="frame5">
                                         <property name="MemberName" />
+                                        <property name="CanFocus">False</property>
                                         <property name="ShadowType">None</property>
                                         <property name="LabelXalign">0</property>
                                         <child>
                                           <widget class="Gtk.Alignment" id="GtkAlignment5">
                                             <property name="MemberName" />
+                                            <property name="CanFocus">False</property>
                                             <property name="Xalign">0</property>
                                             <property name="Yalign">0</property>
                                             <property name="LeftPadding">12</property>
                                             <child>
                                               <widget class="Gtk.Image" id="image44">
                                                 <property name="MemberName" />
+                                                <property name="CanFocus">False</property>
                                               </widget>
                                             </child>
                                           </widget>
@@ -302,6 +318,7 @@
                                         <child>
                                           <widget class="Gtk.Label" id="GtkLabel10">
                                             <property name="MemberName" />
+                                            <property name="CanFocus">False</property>
                                             <property name="Events">ButtonPressMask</property>
                                             <property name="LabelProp" translatable="yes">&lt;b&gt;RC-Status&lt;/b&gt;</property>
                                             <property name="UseMarkup">True</property>
@@ -318,18 +335,15 @@
                                     <child>
                                       <widget class="Gtk.Notebook" id="notebook1">
                                         <property name="MemberName" />
-                                        <property name="CanFocus">True</property>
                                         <property name="TabPos">Right</property>
                                         <child>
                                           <widget class="Gtk.ScrolledWindow" id="scrolledwindow1">
                                             <property name="MemberName" />
-                                            <property name="CanFocus">True</property>
                                             <property name="VscrollbarPolicy">Automatic</property>
                                             <property name="HscrollbarPolicy">Automatic</property>
                                             <child>
                                               <widget class="Gtk.TreeView" id="whitelistview">
                                                 <property name="MemberName" />
-                                                <property name="CanFocus">True</property>
                                               </widget>
                                             </child>
                                           </widget>
@@ -340,6 +354,7 @@
                                         <child>
                                           <widget class="Gtk.Label" id="whitelist_label">
                                             <property name="MemberName" />
+                                            <property name="CanFocus">False</property>
                                             <property name="LabelProp" translatable="yes">Whitelist</property>
                                           </widget>
                                           <packing>
@@ -349,13 +364,11 @@
                                         <child>
                                           <widget class="Gtk.ScrolledWindow" id="scrolledwindow4">
                                             <property name="MemberName" />
-                                            <property name="CanFocus">True</property>
                                             <property name="VscrollbarPolicy">Automatic</property>
                                             <property name="HscrollbarPolicy">Automatic</property>
                                             <child>
                                               <widget class="Gtk.TreeView" id="blacklistview">
                                                 <property name="MemberName" />
-                                                <property name="CanFocus">True</property>
                                               </widget>
                                             </child>
                                           </widget>
@@ -367,6 +380,7 @@
                                         <child>
                                           <widget class="Gtk.Label" id="blacklist_label">
                                             <property name="MemberName" />
+                                            <property name="CanFocus">False</property>
                                             <property name="LabelProp" translatable="yes">Blacklist</property>
                                           </widget>
                                           <packing>
@@ -376,13 +390,11 @@
                                         <child>
                                           <widget class="Gtk.ScrolledWindow" id="scrolledwindow5">
                                             <property name="MemberName" />
-                                            <property name="CanFocus">True</property>
                                             <property name="VscrollbarPolicy">Automatic</property>
                                             <property name="HscrollbarPolicy">Automatic</property>
                                             <child>
                                               <widget class="Gtk.TreeView" id="watchlistview">
                                                 <property name="MemberName" />
-                                                <property name="CanFocus">True</property>
                                               </widget>
                                             </child>
                                           </widget>
@@ -394,6 +406,7 @@
                                         <child>
                                           <widget class="Gtk.Label" id="watchlist_label">
                                             <property name="MemberName" />
+                                            <property name="CanFocus">False</property>
                                             <property name="LabelProp" translatable="yes">Beobacht-
 ungsliste</property>
                                           </widget>
@@ -417,13 +430,11 @@ ungsliste</property>
                             <child>
                               <widget class="Gtk.ScrolledWindow" id="scrolledwindow3">
                                 <property name="MemberName" />
-                                <property name="CanFocus">True</property>
                                 <property name="VscrollbarPolicy">Automatic</property>
                                 <property name="HscrollbarPolicy">Automatic</property>
                                 <child>
                                   <widget class="Gtk.TreeView" id="rc_view">
                                     <property name="MemberName" />
-                                    <property name="CanFocus">True</property>
                                   </widget>
                                 </child>
                               </widget>
@@ -440,6 +451,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Label" id="label7">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <property name="LabelProp" translatable="yes">Letzte Änderungen</property>
                   </widget>
                   <packing>
@@ -449,6 +461,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Alignment" id="geckobox">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <child>
                       <placeholder />
                     </child>
@@ -461,6 +474,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Label" id="label1">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <property name="LabelProp" translatable="yes">Browser</property>
                   </widget>
                   <packing>
@@ -470,9 +484,11 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.VBox" id="vbox1">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <child>
                       <widget class="Gtk.MenuBar" id="menubar2">
                         <property name="MemberName" />
+                        <property name="CanFocus">False</property>
                         <node name="menubar2" type="Menubar">
                           <node type="Menu" action="Artikel">
                             <node type="Menuitem" action="LokalSpeichern" />
@@ -491,10 +507,11 @@ ungsliste</property>
                     <child>
                       <widget class="Gtk.Toolbar" id="toolbar1">
                         <property name="MemberName" />
+                        <property name="CanFocus">False</property>
                         <property name="ShowArrow">False</property>
                         <property name="ButtonStyle">Icons</property>
                         <property name="IconSize">LargeToolbar</property>
-                        <node name="toolbar1" type="Menubar" />
+                        <node name="toolbar1" type="Toolbar" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -506,14 +523,12 @@ ungsliste</property>
                     <child>
                       <widget class="Gtk.ScrolledWindow" id="scrolledwindow6">
                         <property name="MemberName" />
-                        <property name="CanFocus">True</property>
                         <property name="VscrollbarPolicy">Automatic</property>
                         <property name="HscrollbarPolicy">Automatic</property>
                         <property name="ShadowType">Out</property>
                         <child>
                           <widget class="Gtk.TextView" id="textview1">
                             <property name="MemberName" />
-                            <property name="CanFocus">True</property>
                             <property name="Text" translatable="yes" />
                             <property name="WrapMode">WordChar</property>
                           </widget>
@@ -533,6 +548,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Label" id="artikellabel">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <property name="LabelProp" translatable="yes">Artikeleditor</property>
                   </widget>
                   <packing>
@@ -542,7 +558,6 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.TreeView" id="treeview1">
                     <property name="MemberName" />
-                    <property name="CanFocus">True</property>
                   </widget>
                   <packing>
                     <property name="Position">3</property>
@@ -552,6 +567,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Label" id="label2">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <property name="LabelProp" translatable="yes">History</property>
                   </widget>
                   <packing>
@@ -561,21 +577,23 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.HBox" id="hbox3">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <child>
                       <widget class="Gtk.Frame" id="frame4">
                         <property name="MemberName" />
+                        <property name="CanFocus">False</property>
                         <property name="ShadowType">None</property>
                         <property name="LabelXalign">0</property>
                         <child>
                           <widget class="Gtk.Alignment" id="GtkAlignment4">
                             <property name="MemberName" />
+                            <property name="CanFocus">False</property>
                             <property name="Xalign">0</property>
                             <property name="Yalign">0</property>
                             <property name="LeftPadding">12</property>
                             <child>
                               <widget class="Gtk.TreeView" id="treeview5">
                                 <property name="MemberName" />
-                                <property name="CanFocus">True</property>
                               </widget>
                             </child>
                           </widget>
@@ -583,6 +601,7 @@ ungsliste</property>
                         <child>
                           <widget class="Gtk.Label" id="GtkLabel9">
                             <property name="MemberName" />
+                            <property name="CanFocus">False</property>
                             <property name="Events">ButtonPressMask</property>
                             <property name="LabelProp" translatable="yes">&lt;b&gt;frame4&lt;/b&gt;</property>
                             <property name="UseMarkup">True</property>
@@ -601,18 +620,19 @@ ungsliste</property>
                     <child>
                       <widget class="Gtk.Frame" id="frame3">
                         <property name="MemberName" />
+                        <property name="CanFocus">False</property>
                         <property name="ShadowType">None</property>
                         <property name="LabelXalign">0</property>
                         <child>
                           <widget class="Gtk.Alignment" id="GtkAlignment3">
                             <property name="MemberName" />
+                            <property name="CanFocus">False</property>
                             <property name="Xalign">0</property>
                             <property name="Yalign">0</property>
                             <property name="LeftPadding">12</property>
                             <child>
                               <widget class="Gtk.TreeView" id="treeview4">
                                 <property name="MemberName" />
-                                <property name="CanFocus">True</property>
                               </widget>
                             </child>
                           </widget>
@@ -620,6 +640,7 @@ ungsliste</property>
                         <child>
                           <widget class="Gtk.Label" id="GtkLabel11">
                             <property name="MemberName" />
+                            <property name="CanFocus">False</property>
                             <property name="Events">ButtonPressMask</property>
                             <property name="LabelProp" translatable="yes">&lt;b&gt;frame3&lt;/b&gt;</property>
                             <property name="UseMarkup">True</property>
@@ -645,6 +666,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Label" id="label3">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <property name="LabelProp" translatable="yes">Diff</property>
                   </widget>
                   <packing>
@@ -657,6 +679,7 @@ ungsliste</property>
                 <child>
                   <widget class="Gtk.Label" id="label4">
                     <property name="MemberName" />
+                    <property name="CanFocus">False</property>
                     <property name="LabelProp" translatable="yes">Benutzer</property>
                   </widget>
                   <packing>
@@ -678,6 +701,7 @@ ungsliste</property>
         <child>
           <widget class="Gtk.Statusbar" id="statusbar1">
             <property name="MemberName" />
+            <property name="CanFocus">False</property>
             <property name="Spacing">2</property>
             <child>
               <placeholder />
@@ -690,6 +714,245 @@ ungsliste</property>
             <property name="PackType">End</property>
             <property name="Position">2</property>
             <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Dialog" id="Wikifighter.OptionsDialog" design-size="521 317">
+    <property name="MemberName" />
+    <property name="CanFocus">False</property>
+    <property name="Events">ButtonPressMask</property>
+    <property name="Title" translatable="yes">Options</property>
+    <property name="AllowShrink">True</property>
+    <property name="Buttons">3</property>
+    <property name="HelpButton">True</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog_VBox">
+        <property name="MemberName" />
+        <property name="CanFocus">False</property>
+        <property name="Events">ButtonPressMask</property>
+        <property name="BorderWidth">2</property>
+        <child>
+          <widget class="Gtk.VBox" id="vbox3">
+            <property name="MemberName" />
+            <property name="CanFocus">False</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Expander" id="expander1">
+                <property name="MemberName" />
+                <property name="Expanded">True</property>
+                <child>
+                  <widget class="Gtk.Table" id="table1">
+                    <property name="MemberName" />
+                    <property name="CanFocus">False</property>
+                    <property name="NRows">3</property>
+                    <property name="NColumns">2</property>
+                    <child>
+                      <placeholder />
+                    </child>
+                    <child>
+                      <widget class="Gtk.Entry" id="password_entry_1">
+                        <property name="MemberName" />
+                        <property name="IsEditable">True</property>
+                        <property name="Visibility">False</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">1</property>
+                        <property name="BottomAttach">2</property>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">True</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Entry" id="password_entry_2">
+                        <property name="MemberName" />
+                        <property name="IsEditable">True</property>
+                        <property name="Visibility">False</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">2</property>
+                        <property name="BottomAttach">3</property>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">True</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="password_label">
+                        <property name="MemberName" />
+                        <property name="CanFocus">False</property>
+                        <property name="LabelProp" translatable="yes">Passwort</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">1</property>
+                        <property name="BottomAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Entry" id="username_entry">
+                        <property name="MemberName" />
+                        <property name="IsEditable">True</property>
+                      </widget>
+                      <packing>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">True</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="username_label">
+                        <property name="MemberName" />
+                        <property name="CanFocus">False</property>
+                        <property name="LabelProp" translatable="yes">Benutzername</property>
+                      </widget>
+                      <packing>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="username_password_label">
+                    <property name="MemberName" />
+                    <property name="CanFocus">False</property>
+                    <property name="LabelProp" translatable="yes">Benutzername / Passwort</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="Wikifighter.Options_ActionArea">
+        <property name="MemberName" />
+        <property name="CanFocus">False</property>
+        <property name="Events">ButtonPressMask</property>
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">4</property>
+        <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="options_help_button">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-help</property>
+            <property name="IsDialogButton">False</property>
+            <property name="label">gtk-help</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="options_cancel_button">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-cancel</property>
+            <property name="IsDialogButton">True</property>
+            <property name="ResponseId">-6</property>
+            <property name="label">gtk-cancel</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="options_apply_button">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-apply</property>
+            <property name="IsDialogButton">True</property>
+            <property name="ResponseId">-10</property>
+            <property name="label">gtk-apply</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="options_ok_button">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-ok</property>
+            <property name="IsDialogButton">True</property>
+            <property name="ResponseId">-5</property>
+            <signal name="Clicked" handler="OnOptionsOkButtonClicked" />
+            <property name="label">gtk-ok</property>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>
